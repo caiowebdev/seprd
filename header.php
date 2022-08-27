@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-2">
                     <button class="btn btn-sm btn-warning w-100">
-                    <i class="fa-solid fa-user"></i>
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Meu Palmeiras
                     </button>
                 </div>
