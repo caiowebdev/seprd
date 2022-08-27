@@ -1,0 +1,21 @@
+/*
+Theme Name: SEP RD_
+Theme URI: https://seprd.caiowebdev.com.br
+Author: Caio de Moura Navas
+Author URI: https://caiowebdev.com/
+Description: Tema para desafio técnico em processo seletivo - Digital Republic
+Version: 1.0
+Requires at least: 5.0
+Tested up to: 6
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sep-rd
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+html, body{
+    padding: 0px;
+    margin : 0px;
+}
