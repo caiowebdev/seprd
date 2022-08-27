@@ -19,3 +19,29 @@ html, body{
     padding: 0px;
     margin : 0px;
 }
+
+span.hashtag{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+
+.text-gray{
+    color: lightgray;
+}
+
+.site-logo{
+    height: 100px;
+    width: auto;
+}
+
+.header-logo{
+    height: auto;
+    width: 90px;
+}

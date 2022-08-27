@@ -1,7 +1,7 @@
 {
 	"uploadOnSave": true,
 	"autoDelete": true,
-	"checkGitignore": false,
+	"checkGitignore": true,
 	"activeTargets": [
 		"Caio Web Dev"
 	],
@@ -12,13 +12,13 @@
 	],
 	"targets": [
 		{
-			"name": "My FTP",
+			"name": "Caio Web Dev",
 			"type": "ftp",
-			"host": "localhost",
+			"host": "ftp.caiowebdev.com.br",
 			"port": 21,
-			"user": "admin",
-			"password": "123456",
-			"dir": "/",
+			"user": "caiowebdev",
+			"password": "c410w3bd3v",
+			"dir": "/seprd.caiowebdev.com.br/wp-content/themes/sep-dr-theme/",
 			"transferDataType": "binary"
 		}
 	]

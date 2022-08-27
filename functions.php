@@ -15,3 +15,11 @@ function external_styles(){
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
     wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.min.css');
 }
+
+//Recuperando logo customizado via painel do wordpress
+//Caso não haja, retorna o logo padrão do tema
+function recupera_custom_logo(){
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+    return $image[0] ?? get_template_directory_uri()."/images/escudo-palmeiras.png";
+}
