@@ -122,7 +122,12 @@ span.hashtag{
 
   #matches-container{
     border-bottom: 5px solid #948448 !important;
+    border-right: 1px solid #948448 !important;
     height: 100%;
+  }
+
+  #matches-container a{
+    text-decoration: none;
   }
 
   .match-logo{
@@ -132,4 +137,21 @@ span.hashtag{
 
   .next-matches span{
     font-size: 10px;
+  }
+
+  .carousel-item h1{
+    text-transform: uppercase;
+  }
+
+  #NextMatchClassification{
+    top: -50px;
+    z-index: 1;
+    border-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 30px 10px !important;
+  }
+
+  .next-logo{
+    max-height: 150px;
   }

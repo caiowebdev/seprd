@@ -30,7 +30,9 @@
                 <div class="row text-white py-2">
                     <div class="col-2 text-left">
                         <div class="align-middle">
-                            <img src="<?php echo recupera_custom_logo(); ?>" class="site-logo">
+                            <a href="<?php echo get_bloginfo('url'); ?>">
+                                <img src="<?php echo recupera_custom_logo(); ?>" class="site-logo">
+                            </a>
                         </div>
                     </div>
                     <div class="col-8">
@@ -82,15 +84,33 @@
                 </div>
             </div>
         </div>
-        <?php $loop = new WP_Query( array( 'post_type' => 'partidas', 'posts_per_page' => 3 ) ); ?>
-        <?php if ($loop->have_posts()): ?>
-        <div id="matches-container" class="container-fluid bg-white border-bottom border-warning p-0">
-            <div class="container-lg">
+        <!-- Recuperando os posts do tipo Partidas através da classe WP_Query -->
+        <?php $partidas = new WP_Query(
+                                array(
+                                    'post_type' => 'partidas',
+                                    'posts_per_page' => 3,
+                                    'order' => 'ASC',
+                                    'orderby'   => 'meta_value',
+                                    'meta_query' => array(
+                                        array(
+                                            'key' => '_data_partida',
+                                            'value' => date('Y-m-d'),
+                                            'compare' => '>='
+                                        )
+                                    )
+                                )
+                            );
+        ?>
+        <!-- Se houverem partidas exibe a seção -->
+        <?php if ($partidas->have_posts()): ?>
+        <div class="container-fluid p-0">
+            <div id="matches-container" class="container-lg">
                 <div class="row py-0">                
                     <div class="col-3 bg-warning text-white text-center" style="display: flex; justify-content: center; align-items: center;">
                         <span class="align-middle">Próximas Partidas:</span>
                     </div>
-                    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                    <!-- Início do looping de partidas -->
+                    <?php while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
                         <div class="col-3 p-1 next-matches align-middle" style="float: left; line-height: 1;">
                             <a href="#" style="float: left; padding-right: 7px">               
                                 <img src="<?php echo recupera_custom_logo(); ?>" class="match-logo">
@@ -103,8 +123,9 @@
                             <span style="font-weight: bold;"><?php echo get_post_meta( get_the_ID(), '_local_partida', true ); ?></span>
                         </div>
                     <?php endwhile; ?>
+                    <!-- Fim do looping de partidas -->
                 </div>
             </div>
         </div>
         <?php endif; ?>
-        
+        <?php wp_reset_postdata(); ?>
