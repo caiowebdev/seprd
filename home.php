@@ -9,7 +9,30 @@
 //(conteúdos do cabeçalho da homepage)
 get_header();
 ?>
-
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
+<p>Teste</p>
 <?php
 //Incorporando a página footer.php
 //(conteúdos do rodpé da homepage)
