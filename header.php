@@ -16,11 +16,11 @@
                         <span class="hashtag align-middle">#omaior<span class="text-gray">campeão</span>dobrasil</span>
 
                     </div>
-                    <div class="col-md-2 col-sm-12">
-                        <button class="btn btn-sm btn-warning w-100">
-                            <i class="fa fa-sign-in" aria-hidden="true"></i>
-                            Meu Palmeiras
-                        </button>
+                    <div id="avanti" class="col-md-2 col-sm-12 text-right">
+                        <a href="https://ingressospalmeiras.com.br/" target="_blank">
+                            <strong>Seja</strong>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/avanti.png" class="header-logo"><br>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -106,12 +106,12 @@
         <div class="container-fluid p-0">
             <div id="matches-container" class="container-lg">
                 <div class="row py-0">                
-                    <div class="col-3 bg-warning text-white text-center" style="display: flex; justify-content: center; align-items: center;">
-                        <span class="align-middle">Próximas Partidas:</span>
+                    <div class="col-3 bg-warning text-white text-center p-2" style="display: flex; justify-content: center; align-items: center;">
+                        <strong>Próximas Partidas:</strong>
                     </div>
                     <!-- Início do looping de partidas -->
                     <?php while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
-                        <div class="col-3 p-1 next-matches align-middle" style="float: left; line-height: 1;">
+                        <div class="col-3 p-2 next-matches align-middle" style="float: left; line-height: 1;">
                             <a href="#" style="float: left; padding-right: 7px">               
                                 <img src="<?php echo recupera_custom_logo(); ?>" class="match-logo">
                                 &nbsp;X&nbsp;

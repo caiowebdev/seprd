@@ -121,7 +121,7 @@ span.hashtag{
   }
 
   #matches-container{
-    border-bottom: 5px solid #948448 !important;
+    /* border-bottom: 5px solid #948448 !important; */
     border-right: 1px solid #948448 !important;
     height: 100%;
   }
@@ -154,4 +154,122 @@ span.hashtag{
 
   .next-logo{
     max-height: 150px;
+  }
+
+  #LastestNew h3{
+    padding: 5px;
+    color: #00532E;
+    border-left:   3px solid #00532E;
+    border-bottom: 1px solid #00532E;
+    margin-bottom: 25px;
+  }
+
+  #LastestNew h3 a{
+    color: #948448;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: lighter;
+  }
+
+  #LastestNew h3 .divider{
+    text-decoration: none;
+    font-weight: lighter;
+  }
+
+  #LastestNew .card, #LastestNew .card img{
+    border: unset !important;
+    border-radius: unset !important;
+  }
+
+  #LastestNew .card .card-body{
+    border: 1px solid rgb(231, 231, 231) !important;
+    border-radius: unset !important;
+    margin: 0 2%;
+    position: relative;
+    top: -40px;
+    background: #fff;
+  }
+
+  .card-img, .card-img-top {
+    max-height: 400px;
+  }
+
+  #Videos{
+    margin-top: 30px;
+    padding: 10px 20px;
+  }
+
+  #Videos h3{
+    padding: 5px;
+    color: #ffffff;
+    border-left:   3px solid #00532E;
+    border-bottom: 1px solid #00532E;
+    margin-bottom: 25px;
+  }
+
+  #Videos h3 a{
+    color: #a29161;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  #Videos h3 .divider{
+    text-decoration: none;
+    font-weight: lighter;
+  }
+
+  #Videos .card{
+    background-color: transparent;
+    border: unset !important;
+    border-radius: unset !important;
+  }
+
+  #Videos .card .card-body{
+    /* border: 1px solid rgb(231, 231, 231) !important; */
+    border-radius: unset !important;
+    position: relative;
+    background: #002515;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 0.75rem;
+  }
+
+  #Videos .card-date{
+    color: #a29161;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  #Shop{
+    margin-top: 30px;
+    padding: 10px 20px;
+  }
+
+  #Shop h3{
+    padding: 5px;
+    color: #00532E;
+    border-left:   3px solid #00532E;
+    border-bottom: 1px solid #00532E;
+    margin-bottom: 25px;
+  }
+
+  #Shop h3 a{
+    color: #a29161;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  #Shop h3 .divider{
+    text-decoration: none;
+    font-weight: lighter;
+  }
+
+  #avanti a{
+    text-decoration: none;
+    color: #fff;
   }

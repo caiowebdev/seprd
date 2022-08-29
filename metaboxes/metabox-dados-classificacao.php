@@ -1,7 +1,7 @@
 <?php
 //Registrando Meta Box para dados de classificação
 add_action( 'add_meta_boxes', function() {
-    add_meta_box( 'wpdocs-id', 'Dados de Classificação', 'standings_fields', 'times', 'normal' );
+    add_meta_box( 'classificacao-id', 'Dados de Classificação', 'standings_fields', 'times', 'normal' );
 } );
  
 //Função de callback da metabox

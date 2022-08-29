@@ -1,7 +1,7 @@
 <?php
 //Registrando Meta Box para dados da partida
 add_action( 'add_meta_boxes', function() {
-    add_meta_box( 'wpdocs-id', 'Dados da Partida', 'matches_fields', 'partidas', 'normal' );
+    add_meta_box( 'partidas-id', 'Dados da Partida', 'matches_fields', 'partidas', 'normal' );
 } );
  
 //Função de callback da metabox
