@@ -39,16 +39,22 @@ function standings_fields( $post ) {
  
 //Hook para salvamento dos campos ao salvar o post
 add_action( 'save_post', function( $post_id ) {
+
+    $pontuacao = 0;
+
     if ( isset( $_POST['_jogos'] ) )
         update_post_meta( $post_id, '_jogos', $_POST['_jogos'] );
-    if ( isset( $_POST['_vitorias'] ) )
+    if ( isset( $_POST['_vitorias'] ) ){
         update_post_meta( $post_id, '_vitorias', $_POST['_vitorias'] );
-    if ( isset( $_POST['_empates'] ) )
+        $pontuacao += ($_POST['_vitorias']*3);
+    }
+    if ( isset( $_POST['_empates'] ) ){
         update_post_meta( $post_id, '_empates', $_POST['_empates'] );
+        $pontuacao += ($_POST['_empates']*3);
+    }
     if ( isset( $_POST['_derrotas'] ) )
         update_post_meta( $post_id, '_derrotas', $_POST['_derrotas'] );
     
     //Atualiza a quantidade de pontos de acordo com o resultado de partidas
-    $pontuacao = ($_POST['_vitorias']*3) + $_POST['_empates'];
     update_post_meta( $post_id, '_pontuacao', $pontuacao );
 } );

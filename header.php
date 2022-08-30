@@ -106,12 +106,12 @@
         <div class="container-fluid p-0">
             <div id="matches-container" class="container-lg">
                 <div class="row py-0">                
-                    <div class="col-3 bg-warning text-white text-center p-2" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="col-sm-12 col-md-3 bg-warning text-white text-center p-2" style="display: flex; justify-content: center; align-items: center;">
                         <strong>Próximas Partidas:</strong>
                     </div>
                     <!-- Início do looping de partidas -->
                     <?php while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
-                        <div class="col-3 p-2 next-matches align-middle" style="float: left; line-height: 1;">
+                        <div class="col-sm-12 col-md-3 p-2 next-matches align-middle" style="float: left; line-height: 1;">
                             <a href="#" style="float: left; padding-right: 7px">               
                                 <img src="<?php echo recupera_custom_logo(); ?>" class="match-logo">
                                 &nbsp;X&nbsp;

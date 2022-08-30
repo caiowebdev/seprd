@@ -56,9 +56,9 @@ get_header();
             </div>
         </div>
         <div class="container-fluid p-0">
-            <div id="NextMatchClassification" class="container p-2 card shadow">
+            <div id="NextMatchClassification" class="container card shadow">
                 <div class="row">
-                    <div class="col-md-6 text-center">
+                    <div class="col-md-12 col-lg-6 text-center p-2">
                         <h4 class="text-center">Próximo Confronto</h4>
                         <hr>
                         <!-- Recuperando próximo confronto através da classe WP_Query -->
@@ -80,14 +80,14 @@ get_header();
                         ?>
                         <!-- Recuperando a próxima partida -->
                         <?php while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
-                        <div class="col-12 p-1 next-match align-middle text-center">
+                        <div class="col-md-12 p-1 next-match align-middle text-center">
                             <h5 class="text-warning"><?php echo get_post_meta( get_the_ID(), '_campeonato_partida', true ); ?></h5>
                             <span><?php echo formatDateNextMatch(get_post_meta( get_the_ID(), '_data_partida', true )); ?></span> |
                             <span><?php echo formatTimeNextMatch(get_post_meta( get_the_ID(), '_hora_partida', true )); ?></span><br>
                             <span style="font-weight: bold;"><?php echo get_post_meta( get_the_ID(), '_local_partida', true ); ?></span><br><br>
-                                <img src="<?php echo recupera_custom_logo(); ?>" class="next-logo">
+                                <img src="<?php echo recupera_custom_logo(); ?>" class="next-logo img-fluid">
                                 &nbsp;&nbsp;&nbsp;X&nbsp;
-                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="next-logo">
+                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="next-logo img-fluid">
                         </div>
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?>             
@@ -96,7 +96,7 @@ get_header();
                         INGRESSOS
                     </button>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6 p-2">
                         <h4 class="text-center">Classificação</h4>
                         <hr>
                         <!-- Recuperando classificação do campeonato Brasileiro da classe WP_Query -->
@@ -128,40 +128,42 @@ get_header();
                                                 )
                                             );
                         ?>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Equipe</th>
-                                <th scope="col">Pts</th>
-                                <th scope="col">J</th>
-                                <th scope="col">V</th>
-                                <th scope="col">E</th>
-                                <th scope="col">D</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Listando a classificação -->
-                                <?php $counter = 1; ?>
-                                <?php while ( $times->have_posts() ) : $times->the_post(); ?>
-                                <tr>
-                                    <th scope="row"><?php echo $counter; ?></th>
-                                    <td>
-                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" style="max-height: 25px;">
-                                    <?php the_title(); ?>
-                                    </td>
-                                    <td><?php echo get_post_meta( get_the_ID(), '_pontuacao', true ); ?></td>
-                                    <td><?php echo get_post_meta( get_the_ID(), '_jogos', true ); ?></td>
-                                    <td><?php echo get_post_meta( get_the_ID(), '_vitorias', true ); ?></td>
-                                    <td><?php echo get_post_meta( get_the_ID(), '_empates', true ); ?></td>
-                                    <td><?php echo get_post_meta( get_the_ID(), '_derrotas', true ); ?></td>
-                                </tr>
-                                <?php $counter++; ?>
-                                <?php endwhile; ?>
-                                <?php wp_reset_postdata(); ?>
-                                <!-- Fim listando a classificação -->
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Equipe</th>
+                                    <th scope="col">Pts</th>
+                                    <th scope="col">J</th>
+                                    <th scope="col">V</th>
+                                    <th scope="col">E</th>
+                                    <th scope="col">D</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Listando a classificação -->
+                                    <?php $counter = 1; ?>
+                                    <?php while ( $times->have_posts() ) : $times->the_post(); ?>
+                                    <tr>
+                                        <th scope="row"><?php echo $counter; ?></th>
+                                        <td style="min-width: 150px;">
+                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" style="max-height: 25px;">
+                                        <?php the_title(); ?>
+                                        </td>
+                                        <td><?php echo get_post_meta( get_the_ID(), '_pontuacao', true ); ?></td>
+                                        <td><?php echo get_post_meta( get_the_ID(), '_jogos', true ); ?></td>
+                                        <td><?php echo get_post_meta( get_the_ID(), '_vitorias', true ); ?></td>
+                                        <td><?php echo get_post_meta( get_the_ID(), '_empates', true ); ?></td>
+                                        <td><?php echo get_post_meta( get_the_ID(), '_derrotas', true ); ?></td>
+                                    </tr>
+                                    <?php $counter++; ?>
+                                    <?php endwhile; ?>
+                                    <?php wp_reset_postdata(); ?>
+                                    <!-- Fim listando a classificação -->
+                                </tbody>
+                            </table>
+                        </div>
                         <a href="#" class="float-right text-warning">Veja Mais</a>
                     </div>
                 </div>
@@ -188,7 +190,7 @@ get_header();
                         $counter = 0; ?>
                         <!-- Início do looping de notícias (slides) -->
                         <?php while ( $noticias->have_posts() ) : $noticias->the_post(); ?>
-                            <div class="card col-md-<?php echo ($counter > 1) ? '4' : '6'; ?>" style="width: 18rem;">
+                            <div class="card col-sm-12 col-md-<?php echo ($counter > 1) ? '4' : '6'; ?>">
                                 <a href="<?php the_permalink(); ?>">
                                     <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top" alt="..." >
                                 </a>
@@ -245,11 +247,35 @@ get_header();
                         ?>
                         <!-- Looping das camisas da temporada atual -->
                         <?php while ( $camisas->have_posts() ) : $camisas->the_post(); ?>
-                        <div class="col-4 p-1 shop align-middle text-center">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>">
-                            <h4 class="text-warning p-2"><?php the_title(); ?></h4>
-                            <a href="<?php echo get_post_meta( get_the_ID(), '_url', true ); ?>" target="_blank" class="btn btn-primary btn-lg">COMPRAR</a>
+                        <div class="col-sm-12 col-md-4 p-1 shop align-middle text-center">
+                            <h5 class="text-warning p-2"><?php the_title(); ?></h5>
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid">
+                            <a href="<?php echo get_post_meta( get_the_ID(), '_url', true ); ?>" target="_blank" class="btn btn-primary btn-lg my-3">COMPRAR</a>
                         </div>
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>    
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-2 my-5">
+        <div id="Partners" class="container bg-white text-center">
+            <h3 class="text-warning">Parceiros</h3>
+            <hr>
+            <div class="text-center">
+                <?php $parceiros = new WP_Query(
+                                                array(
+                                                    'post_type' => 'parceiros',
+                                                    'posts_per_page' => -1,
+                                                    'order' => 'ASC'
+                                                )
+                                            );
+                        ?>
+                        <!-- Looping das parceiros da temporada atual -->
+                        <?php while ( $parceiros->have_posts() ) : $parceiros->the_post(); ?>
+                        <a href="<?php echo get_post_meta( get_the_ID(), '_url', true ); ?>" target="_blank">
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid py-3 px-3">
+                        </a>
+                        
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?>    
             </div>

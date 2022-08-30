@@ -48,7 +48,10 @@ function register_sep_menus() {
     register_nav_menus(
         array(
             'primary-menu' => __( 'Primary Menu' ),
-            'secondary-menu' => __( 'Secondary Menu' )
+            'secondary-menu' => __( 'Secondary Menu' ),
+            'footer-menu-1' => __( 'Footer 1' ),
+            'footer-menu-2' => __( 'Footer 2' ),
+            'footer-menu-3' => __( 'Footer 3' ),
         )
     );
 }
@@ -61,4 +64,11 @@ function formatDateNextMatch($data){
 //Formatação de hora para exibição das partidas no header (Próximas Partidas)
 function formatTimeNextMatch($data){
     return date("H\Hi", strtotime($data));
+}
+
+//Função para retornar o nome do menu especificado no Admin
+function getMenuName($location){
+    $locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations[$location] );
+    return $menu->name;
 }
