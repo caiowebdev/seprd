@@ -192,7 +192,7 @@ get_header();
                         <?php while ( $noticias->have_posts() ) : $noticias->the_post(); ?>
                             <div class="card col-sm-12 col-md-<?php echo ($counter > 1) ? '4' : '6'; ?>">
                                 <a href="<?php the_permalink(); ?>">
-                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top" alt="..." >
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top" alt="<?php the_title(); ?>" >
                                 </a>
                                 <div class="card-body">
                                     <span class="card-title"><?php the_title(); ?></span>
@@ -220,7 +220,7 @@ get_header();
                 <?php foreach ($videos->items as $video): ?>
                         <div class="card h-100 col-md-<?php echo ($counter > 1) ? '4' : '6'; ?>" style="float: left;">
                             <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo $video->snippet->thumbnails->high->url; ?>" class="card-img-top" alt="..." >
+                                <img src="<?php echo $video->snippet->thumbnails->high->url; ?>" class="card-img-top" alt="<?php echo $video->snippet->title; ?>" >
                             </a>
                             <div class="card-body">
                                 <span class="card-date"><?php echo wp_date('d F Y', strtotime($video->snippet->publishTime)); ?></span><br>

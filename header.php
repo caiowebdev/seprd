@@ -12,11 +12,10 @@
         <div class="container-fluid bg-primary">
             <div class="container-lg">
                 <div class="row text-white py-1">
-                    <div class="col-md-9 col-sm-6">
+                    <div class="col-md-9 col-sm-12 text-center text-md-start">
                         <span class="hashtag align-middle">#omaior<span class="text-gray">campeão</span>dobrasil</span>
-
                     </div>
-                    <div id="avanti" class="col-md-3 col-sm-12 text-right">
+                    <div id="avanti" class="col-md-3 col-sm-12 text-center text-md-end">
                         <a href="https://ingressospalmeiras.com.br/" target="_blank">
                             <strong>Seja</strong>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/avanti.png" class="header-logo"><br>
@@ -28,7 +27,7 @@
         <div id="menus-container" class="container-fluid bg-secondary sticky-top">
             <div class="container-lg">
                 <div class="row text-white py-2">
-                    <div class="col-12 col-md-2">
+                    <div class="col-12 col-md-2 d-none d-md-block">
                         <div class="text-center">
                             <a href="<?php echo get_bloginfo('url'); ?>">
                                 <img src="<?php echo recupera_custom_logo(); ?>" class="site-logo">
@@ -46,11 +45,14 @@
                                 wp_nav_menu($args);
                             ?>
                         </div>
-                        <div class="row-fluid text-center">
-                            <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="row-fluid text-center sticky-sm-top">
+                            <nav class="navbar navbar-expand-lg navbar-dark">
                                 <div class="container">
-                                    <button class="navbar-toggler mx-auto my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
+                                    <a href="<?php echo get_bloginfo('url'); ?>" class="d-md-none">
+                                        <img src="<?php echo recupera_custom_logo(); ?>" class="mob-menu-logo">
+                                    </a>
+                                    <button class="navbar-toggler mx-auto my-2 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon text-white"></span>
                                     </button>
                                     <div class="collapse navbar-collapse col-sm-12" id="navbarSupportedContent">
                                     <?php

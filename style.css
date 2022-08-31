@@ -46,6 +46,11 @@ span.hashtag{
     width: 90px;
 }
 
+.mob-menu-logo{
+  height: 60px;
+  width: auto;
+}
+
 .menu-header-primary li{
     display: inline;
     list-style: none;

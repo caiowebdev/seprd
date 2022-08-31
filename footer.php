@@ -66,7 +66,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-12 mx-auto mb-0">
+      <div class="col-md-12 mx-auto mb-0 text-center">
         <img src="<?php echo get_template_directory_uri(); ?>/images/footer-tacas-maior-campeao-2020.png" class="img-fluid py-4">
       </div>
     </section>
