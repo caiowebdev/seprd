@@ -43,11 +43,11 @@ get_header();
                         <?php wp_reset_postdata(); ?>
                         <!-- Final do looping de noticias -->
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" title="Slide Anterior" aria-label="Slide Anterior">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" title="Próximo Slide" aria-label="Próximo Slide">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden"></span>
                     </button>
@@ -85,15 +85,15 @@ get_header();
                             <span><?php echo formatDateNextMatch(get_post_meta( get_the_ID(), '_data_partida', true )); ?></span> |
                             <span><?php echo formatTimeNextMatch(get_post_meta( get_the_ID(), '_hora_partida', true )); ?></span><br>
                             <span style="font-weight: bold;"><?php echo get_post_meta( get_the_ID(), '_local_partida', true ); ?></span><br><br>
-                                <img src="<?php echo recupera_custom_logo(); ?>" class="next-logo img-fluid">
+                                <img src="<?php echo recupera_custom_logo(); ?>" class="next-logo img-fluid" alt="Sociedade Esportiva Palmeiras">
                                 &nbsp;&nbsp;&nbsp;X&nbsp;
-                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="next-logo img-fluid">
+                                <?php echo get_the_post_thumbnail( get_the_ID(), 'thumbnail', array( 'class' => 'next-logo img-fluid' ) ); ?>
                         </div>
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?>             
                     <!-- Fim recuperando a próxima partida -->
-                    <button class="btn btn-warning mt-5">
-                        INGRESSOS
+                    <button class="btn btn-warning mt-5" title="Compre seu ingresso" aria-label="Compre seu ingresso">
+                        Compre seu ingresso
                     </button>
                     </div>
                     <div class="col-md-12 col-lg-6 p-2">
@@ -148,7 +148,7 @@ get_header();
                                     <tr>
                                         <th scope="row"><?php echo $counter; ?></th>
                                         <td style="min-width: 150px;">
-                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" style="max-height: 25px;">
+                                        <?php echo get_the_post_thumbnail( get_the_ID(), 'thumbnail', array( 'style' => 'max-height: 25px; width: auto;')); ?>
                                         <?php the_title(); ?>
                                         </td>
                                         <td><?php echo get_post_meta( get_the_ID(), '_pontuacao', true ); ?></td>
@@ -273,7 +273,7 @@ get_header();
                         <!-- Looping das parceiros da temporada atual -->
                         <?php while ( $parceiros->have_posts() ) : $parceiros->the_post(); ?>
                         <a href="<?php echo get_post_meta( get_the_ID(), '_url', true ); ?>" target="_blank">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid py-3 px-3">
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid py-3 px-3" alt="<?php the_title(); ?>">
                         </a>
                         
                     <?php endwhile; ?>

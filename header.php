@@ -18,7 +18,7 @@
                     <div id="avanti" class="col-md-3 col-sm-12 text-center text-md-end">
                         <a href="https://ingressospalmeiras.com.br/" target="_blank">
                             <strong>Seja</strong>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/avanti.png" class="header-logo"><br>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/avanti.png" class="header-logo" akt="Seja Sócio Avanti"><br>
                         </a>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="col-12 col-md-2 d-none d-md-block">
                         <div class="text-center">
                             <a href="<?php echo get_bloginfo('url'); ?>">
-                                <img src="<?php echo recupera_custom_logo(); ?>" class="site-logo">
+                                <img src="<?php echo recupera_custom_logo(); ?>" class="site-logo" alt="Sociedade Esportiva Palmeiras">
                             </a>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <nav class="navbar navbar-expand-lg navbar-dark">
                                 <div class="container">
                                     <a href="<?php echo get_bloginfo('url'); ?>" class="d-md-none">
-                                        <img src="<?php echo recupera_custom_logo(); ?>" class="mob-menu-logo">
+                                        <img src="<?php echo recupera_custom_logo(); ?>" class="mob-menu-logo" alt="Sociedade Esportiva Palmeiras">
                                     </a>
                                     <button class="navbar-toggler mx-auto my-2 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon text-white"></span>
@@ -91,9 +91,9 @@
                     <div class="col-12 col-md-2">
                         <div class="card">
                             <div class="card-body p-0 d-sm-flex text-center flex-md-column mx-auto">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-crefisa.png" class="header-logo py-1">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-puma.png" class="header-logo py-1">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-fam.png" class="header-logo py-1">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-crefisa.png" class="header-logo py-1" alt="Crefisa">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-puma.png" class="header-logo py-1" alt="PUMA">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-fam.png" class="header-logo py-1" alt="FAM">
                             </div>
                         </div>
                     </div>
@@ -129,9 +129,9 @@
                     <?php while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
                         <div class="col-sm-12 col-md-3 p-2 next-matches align-middle text-center" style="float: left; line-height: 1; dsplay: table;">
                             <a href="#" style="padding-right: 7px">               
-                                <img src="<?php echo recupera_custom_logo(); ?>" class="match-logo">
+                                <img src="<?php echo recupera_custom_logo(); ?>" class="match-logo" alt="Sociedade Esportiva Palmeiras">
                                 &nbsp;X&nbsp;
-                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="match-logo">
+                                <?php echo get_the_post_thumbnail( get_the_ID(), 'thumbnail', array( 'class' => 'match-logo')); ?>
                             </a>
                             <span><?php echo get_post_meta( get_the_ID(), '_campeonato_partida', true ); ?></span> |
                             <span><?php echo formatDateNextMatch(get_post_meta( get_the_ID(), '_data_partida', true )); ?></span> |
