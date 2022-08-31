@@ -1,5 +1,6 @@
 <?php
 //Classe para integrar o menu do bootstrap com os menus do wordpress
+//Fonte: https://github.com/AlexWebLab/bootstrap-5-wordpress-navbar-walker
 
 class BootstrapNavMenuWalker extends Walker_Nav_menu
 {
