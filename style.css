@@ -57,8 +57,13 @@ span.hashtag{
 .menu-header-primary li:last-child:after { content: none; }
 
 .menu-header-primary li a{
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-header-primary-mob li .nav-link{
+  color: white !important;
+  text-decoration: none;
 }
 
 .carousel-item {

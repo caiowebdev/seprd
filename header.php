@@ -12,11 +12,11 @@
         <div class="container-fluid bg-primary">
             <div class="container-lg">
                 <div class="row text-white py-1">
-                    <div class="col-md-10 col-sm-12">
+                    <div class="col-md-9 col-sm-6">
                         <span class="hashtag align-middle">#omaior<span class="text-gray">campeão</span>dobrasil</span>
 
                     </div>
-                    <div id="avanti" class="col-md-2 col-sm-12 text-right">
+                    <div id="avanti" class="col-md-3 col-sm-12 text-right">
                         <a href="https://ingressospalmeiras.com.br/" target="_blank">
                             <strong>Seja</strong>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/avanti.png" class="header-logo"><br>
@@ -28,18 +28,18 @@
         <div id="menus-container" class="container-fluid bg-secondary sticky-top">
             <div class="container-lg">
                 <div class="row text-white py-2">
-                    <div class="col-2 text-left">
-                        <div class="align-middle">
+                    <div class="col-12 col-md-2">
+                        <div class="text-center">
                             <a href="<?php echo get_bloginfo('url'); ?>">
                                 <img src="<?php echo recupera_custom_logo(); ?>" class="site-logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                     <div class="row-fluid text-center">
                             <?php
                                 $args = array(
-                                    'menu_class' => "menu-header-primary",
+                                    'menu_class' => "menu-header-primary d-none d-lg-block",
                                     'container' => "ul", // (string) Elemento HTML onde o menu será gerado.
                                     'theme_location' => "primary-menu", // (string) Recupera o menu criado no Admin para a posição primary-menu.
                                 );
@@ -49,11 +49,11 @@
                         <div class="row-fluid text-center">
                             <nav class="navbar navbar-expand-lg navbar-light">
                                 <div class="container">
-                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <button class="navbar-toggler mx-auto my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                     </button>
-                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <?php
+                                    <div class="collapse navbar-collapse col-sm-12" id="navbarSupportedContent">
+                                    <?php
                                         wp_nav_menu(
                                             array(
                                                 'theme_location' => 'secondary-menu',
@@ -66,17 +66,31 @@
                                             )
                                         );
                                         ?>
+                                        <hr class="d-lg-none bg-white">
+                                        <?php
+                                        wp_nav_menu(
+                                            array(
+                                                'theme_location' => 'primary-menu',
+                                                'container' => false,
+                                                'menu_class' => 'menu-header-primary-mob',
+                                                'fallback_cb' => '__return_false',
+                                                'items_wrap' => '<ul id="%1$s" class="navbar-nav mx-auto mb-2 mb-md-0 d-lg-none %2$s">%3$s</ul>',
+                                                'depth' => 2,
+                                                'walker' => new BootstrapNavMenuWalker()
+                                            )
+                                        );
+                                        ?>
                                     <!-- other nav ul lists -->
                                     </div>
                                 </div>
                             </nav>
                         </div>
                     </div>
-                    <div class="col-2 text-right">
-                        <div class="card h-100">
-                            <div class="card-body text-center p-0">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-crefisa.png" class="header-logo py-1"><br>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-puma.png" class="header-logo py-1"><br>
+                    <div class="col-12 col-md-2">
+                        <div class="card">
+                            <div class="card-body p-0 d-sm-flex text-center flex-md-column mx-auto">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-crefisa.png" class="header-logo py-1">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-puma.png" class="header-logo py-1">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/logo-fam.png" class="header-logo py-1">
                             </div>
                         </div>
@@ -111,8 +125,8 @@
                     </div>
                     <!-- Início do looping de partidas -->
                     <?php while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
-                        <div class="col-sm-12 col-md-3 p-2 next-matches align-middle" style="float: left; line-height: 1;">
-                            <a href="#" style="float: left; padding-right: 7px">               
+                        <div class="col-sm-12 col-md-3 p-2 next-matches align-middle text-center" style="float: left; line-height: 1; dsplay: table;">
+                            <a href="#" style="padding-right: 7px">               
                                 <img src="<?php echo recupera_custom_logo(); ?>" class="match-logo">
                                 &nbsp;X&nbsp;
                                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="match-logo">
